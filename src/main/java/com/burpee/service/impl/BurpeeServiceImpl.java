@@ -1,8 +1,10 @@
-package com.burpee.service.BurpeeService.impl;
+package com.burpee.service.impl;
 
 import com.burpee.entities.Burpee;
+import com.burpee.entities.User;
 import com.burpee.repository.BurpeeRepository;
-import com.burpee.service.BurpeeService.BurpeeService;
+import com.burpee.service.BurpeeService;
+import com.burpee.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -16,8 +18,11 @@ public class BurpeeServiceImpl implements BurpeeService {
 
     private final BurpeeRepository repository;
 
-    public BurpeeServiceImpl(BurpeeRepository repository) {
+    private final UserService userService;
+
+    public BurpeeServiceImpl(BurpeeRepository repository, UserService userService) {
         this.repository = repository;
+        this.userService = userService;
     }
 
     @Override
@@ -26,23 +31,19 @@ public class BurpeeServiceImpl implements BurpeeService {
     }
 
     @Override
-    public ResponseEntity<List<Burpee>>  getAllByUser(String emailUser) {
+    public ResponseEntity<List<Burpee>>  getAllByUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-       /* if(auth == null)
-            throw new UnauthenticatedException("Authentication not found!");
 
         String username = auth.getName();
-        return this.repository.findAllByUserUsername("email@test.com");*/
-        final var burpees = this.repository.findAll();
-
-        if (burpees.size() == 0)
-            return ResponseEntity.notFound().build();
-
-        return ResponseEntity.ok(burpees);
+        return ResponseEntity.ok(this.repository.findAllByUserUsername(username));
     }
 
     @Override
     public ResponseEntity<Burpee> save(Burpee burpee) {
+        final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.getUserByName( auth.getName() );
+
+        burpee.setUser(user);
         return ResponseEntity.ok(this.repository.save(burpee));
     }
 

@@ -1,7 +1,7 @@
 package com.burpee.controller;
 
 import com.burpee.entities.Burpee;
-import com.burpee.service.BurpeeService.BurpeeService;
+import com.burpee.service.BurpeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +19,7 @@ public class BurpeeController {
 
     @GetMapping()
     public ResponseEntity<List<Burpee>> findAllByCurrentUser()/* throws UnauthenticatedException */{
-        return this.service.getAllByUser("test");
+        return this.service.getAllByUser();
     }
 
     @PostMapping()

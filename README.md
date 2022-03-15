@@ -16,6 +16,6 @@ Entidades:
 * Authority
 * Entidad a elección propia
 
-Hacer primero el API REST y comprobar que funciona.
+Hacer primero el API REST y comprobar que funciona.  👌🏻
 
-Segundo: agregar seguridad HTTP BASIC utilizando UserDetails y UserDetailsManager siguiendo la aplicación realizada en clase en el proyecto **s016**.
+Segundo: agregar seguridad HTTP BASIC utilizando UserDetails y UserDetailsManager siguiendo la aplicación realizada en clase en el proyecto **s016**. 👌🏻
