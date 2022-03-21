@@ -1,8 +1,8 @@
-package com.burpee.service.BurpeeService.impl;
+package com.burpee.service.impl;
 
 import com.burpee.entities.Burpee;
 import com.burpee.repository.BurpeeRepository;
-import com.burpee.service.BurpeeService.BurpeeService;
+import com.burpee.service.BurpeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;

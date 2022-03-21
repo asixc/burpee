@@ -1,4 +1,4 @@
-package com.burpee.service.BurpeeService;
+package com.burpee.service;
 
 import com.burpee.entities.Burpee;
 import org.springframework.http.ResponseEntity;

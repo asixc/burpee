@@ -1,7 +1,7 @@
 package com.burpee.controller;
 
 import com.burpee.entities.Burpee;
-import com.burpee.service.BurpeeService.BurpeeService;
+import com.burpee.service.BurpeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
