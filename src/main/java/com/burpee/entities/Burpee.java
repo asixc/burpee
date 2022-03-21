@@ -27,6 +27,10 @@ public class Burpee implements Serializable {
     @UpdateTimestamp
     private LocalDateTime modifyDate;
 
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
     public Burpee() { }
 
     public Long getId() {
@@ -67,5 +71,13 @@ public class Burpee implements Serializable {
 
     public void setModifyDate(LocalDateTime modifyDate) {
         this.modifyDate = modifyDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "burpee_users")
 public class User implements Serializable {
 
     @Id

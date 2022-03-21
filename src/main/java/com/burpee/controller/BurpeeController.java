@@ -19,7 +19,7 @@ public class BurpeeController {
 
     @GetMapping()
     public ResponseEntity<List<Burpee>> findAllByCurrentUser()/* throws UnauthenticatedException */{
-        return this.service.getAllByUser("test");
+        return this.service.getAllByUser();
     }
 
     @PostMapping()
