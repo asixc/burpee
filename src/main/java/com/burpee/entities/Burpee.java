@@ -1,5 +1,6 @@
 package com.burpee.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -27,6 +28,7 @@ public class Burpee implements Serializable {
     @UpdateTimestamp
     private LocalDateTime modifyDate;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_user")
     private User user;

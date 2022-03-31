@@ -1,21 +1,8 @@
-# Actividad 11/03/2022
+# Actividad 14/03/2022
 
 ### Ejercicio 1  
+Sobre un proyecto anterior, aplicar seguridad por JWT siguiendo el proceso seguido en clase con Spring Data JPA y la base de datos que se quiera (H2, MySQL, PostgreSQL).
 
-Crear un proyecto Spring Boot:
+(Requisito: haber hecho primero en otro proyecto el de Seguridad básica con Spring Data JPA)
 
-* Devtools
-* web
-* data jpa
-* mysql
-* Security
-
-Entidades:
-
-* User
-* Authority
-* Entidad a elección propia
-
-Hacer primero el API REST y comprobar que funciona.  👌🏻
-
-Segundo: agregar seguridad HTTP BASIC utilizando UserDetails y UserDetailsManager siguiendo la aplicación realizada en clase en el proyecto **s016**. 👌🏻
+Probar también los mvcMatchers y la autorización basada en Authorities (read, write).
